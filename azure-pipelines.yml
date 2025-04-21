@@ -17,14 +17,13 @@ variables:
 
   - group: terraform-vars
 
-
 steps:
   - checkout: self
 
   - task: DownloadSecureFile@1
     name: downloadTfvars
     inputs:
-      secureFile: 'terraform.tfvars'
+      secureFile: 'terraformdoc.tfvars'
 
   - task: TerraformTaskV4@4
     displayName: 'Terraform Init'
