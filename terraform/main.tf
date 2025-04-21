@@ -5,6 +5,12 @@ terraform {
       version = "4.26.0"
     }
   }
+  # backend "azurerm" {
+  #   resource_group_name  = "BeStrong-resource-group"
+  #   storage_account_name = "tfstatebestrong324"
+  #   container_name       = "tfstate"
+  #   key                  = "terraform.tfstate"
+  # }
 }
 
 provider "azurerm" {
@@ -50,10 +56,5 @@ resource "azurerm_linux_web_app" "webapp" {
 
   identity {
     type = "SystemAssigned"
-  }
-
-  tags = {
-    environment = "dev"
-    project     = "bestong"
   }
 }
