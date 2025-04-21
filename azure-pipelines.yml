@@ -9,13 +9,58 @@ pr:
       - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: ubuntu-22.04
+
+variables:
+  - name: workingDirectory
+    value: 'terraform'
+
+  - group: terraform-vars
+
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  - checkout: self
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - task: DownloadSecureFile@1
+    name: downloadTfvars
+    inputs:
+      secureFile: 'terraform.tfvars'
+
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform Init'
+    inputs:
+      provider: 'azurerm'
+      command: 'init'
+      backendServiceArm: 'azure-sp-terraform'
+      backendAzureRmResourceGroupName: 'BeStrong-resource-group'
+      backendAzureRmStorageAccountName: 'tfstatebestrong324'
+      backendAzureRmContainerName: 'tfstate'
+      backendAzureRmKey: 'terraform.tfstate'
+      workingDirectory: '$(workingDirectory)'
+
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform Validate'
+    inputs:
+      provider: 'azurerm'
+      command: 'validate'
+      workingDirectory: '$(workingDirectory)'
+
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform Plan'
+    condition: eq(variables['Build.Reason'], 'PullRequest')
+    inputs:
+      provider: 'azurerm'
+      command: 'plan'
+      workingDirectory: '$(workingDirectory)'
+      environmentServiceNameAzureRM: 'azure-sp-terraform'
+      commandOptions: '-var-file=$(downloadTfvars.secureFilePath)'
+
+  - task: TerraformTaskV4@4
+    displayName: 'Terraform Apply'
+    condition: eq(variables['Build.SourceBranchName'], 'master')
+    inputs:
+      provider: 'azurerm'
+      command: 'apply'
+      workingDirectory: '$(workingDirectory)'
+      environmentServiceNameAzureRM: 'azure-sp-terraform'
+      commandOptions: '-var-file=$(downloadTfvars.secureFilePath) -auto-approve'
