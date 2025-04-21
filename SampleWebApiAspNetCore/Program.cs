@@ -48,7 +48,7 @@ var apiVersionDescriptionProvider = app.Services.GetRequiredService<IApiVersionD
 var loggerFactory = app.Services.GetRequiredService<ILoggerFactory>();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || true)
 {
     app.UseSwagger();
     app.UseSwaggerUI(
