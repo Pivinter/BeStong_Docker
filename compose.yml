@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  webapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "29435:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
