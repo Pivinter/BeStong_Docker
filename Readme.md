@@ -75,3 +75,20 @@ See the examples here:
 
 
 ![ASPNETCOREWebAPIGET](./.github/delete.jpg)
+
+### Report
+
+## Description
+For this project, I created a docker file and a compouse docker, then I added the build to GitHub Actions and pushed the image to Docker Hub. Next, I created the infrastructure to launch the application via Azure App service. I also added Azure DevOps for terraform.
+
+## how to start
+
+```bash
+terraform init
+terraform apply \
+  -target=azurerm_resource_group.rg \
+  -target=azurerm_storage_account.tfstate \
+  -target=azurerm_storage_container.tfstate
+terraform init   # with backend
+```
+## Screenshots
