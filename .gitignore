@@ -212,7 +212,7 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 # Terraform
-terraformdoc.tfvars
+terraform.tfvars
 terraform.tfstate.backup
 terraform.tfstate
 .terraform
