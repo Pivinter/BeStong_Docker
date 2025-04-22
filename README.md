@@ -1,3 +1,16 @@
+* [ASP.NET Core WebApi Sample with HATEOAS, Versioning &amp; Swagger](#aspnet-core-webapi-sample-with-hateoas-versioning--swagger)
+   * [Versions](#versions)
+   * [GET all Foods](#get-all-foods)
+   * [GET single food](#get-single-food)
+   * [POST a foodItem](#post-a-fooditem)
+   * [PUT a foodItem](#put-a-fooditem)
+   * [PATCH a foodItem](#patch-a-fooditem)
+   * [DELETE a foodItem](#delete-a-fooditem)
+* [Report](#report)
+   * [Description](#description)
+   * [how to start](#how-to-start)
+   * [Screenshots](#screenshots)
+
 # ASP.NET Core WebApi Sample with HATEOAS, Versioning & Swagger
 
 In this repository I want to give a plain starting point at how to build a WebAPI with ASP.NET Core.
@@ -76,7 +89,7 @@ See the examples here:
 
 ![ASPNETCOREWebAPIGET](./.github/delete.jpg)
 
-### Report
+# Report
 
 ## Description
 For this project, I created a docker file and a compouse docker, then I added the build to GitHub Actions and pushed the image to Docker Hub. Next, I created the infrastructure to launch the application via Azure App service. I also added Azure DevOps for terraform.
@@ -93,29 +106,29 @@ terraform init   # with backend
 ```
 ## Screenshots
 
-![Terraform-init](./.github/.github/Report_image/t-init.png)
+![Terraform-init](.github/Report_image/t-init.png)
   <p align="center">Terraform init</p>
 
-![Terraform-apply](./.github/.github/Report_image/t-apply.png)
+![Terraform-apply](.github/Report_image/t-apply.png)
   <p align="center">Terraform apply</p>
 
-![Terraform-bk](./.github/.github/Report_image/t-init-bk.png)
+![Terraform-bk](.github/Report_image/t-init-bk.png)
   <p align="center">Terraform init backend</p>
 
-![GitHub](./.github/.github/Report_image/gh-build.png)
+![GitHub](.github/Report_image/gh-build.png)
   <p align="center">GitHub Action Build</p>
 
-![Azure](./.github/.github/Report_image/A-pipeline.png)
+![Azure](.github/Report_image/A-pipeline.png)
   <p align="center">Azure build apply</p>
 
-![GitHub](./.github/.github/Report_image/Check-passed.png)
+![GitHub](.github/Report_image/Check-passed.png)
   <p align="center">Check passed</p>
 
-![Azure](./.github/.github/Report_image/A-res-group.png)
+![Azure](.github/Report_image/A-res-group.png)
   <p align="center">Azure resurse group</p>
 
-![Azure](./.github/.github/Report_image/Swagger.png)
+![Azure](.github/Report_image/Swagger.png)
   <p align="center">Worked Swagger</p>
 
-![Azure](./.github/.github/Report_image/Swagger-v2.png)
+![Azure](.github/Report_image/Swagger-v2.png)
   <p align="center">Worked Swagger v2</p>
