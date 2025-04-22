@@ -92,3 +92,30 @@ terraform apply \
 terraform init   # with backend
 ```
 ## Screenshots
+
+![Terraform-init](./.github/.github/Report_image/t-init.png)
+  <p align="center">Terraform init</p>
+
+![Terraform-apply](./.github/.github/Report_image/t-apply.png)
+  <p align="center">Terraform apply</p>
+
+![Terraform-bk](./.github/.github/Report_image/t-init-bk.png)
+  <p align="center">Terraform init backend</p>
+
+![GitHub](./.github/.github/Report_image/gh-build.png)
+  <p align="center">GitHub Action Build</p>
+
+![Azure](./.github/.github/Report_image/A-pipeline.png)
+  <p align="center">Azure build apply</p>
+
+![GitHub](./.github/.github/Report_image/Check-passed.png)
+  <p align="center">Check passed</p>
+
+![Azure](./.github/.github/Report_image/A-res-group.png)
+  <p align="center">Azure resurse group</p>
+
+![Azure](./.github/.github/Report_image/Swagger.png)
+  <p align="center">Worked Swagger</p>
+
+![Azure](./.github/.github/Report_image/Swagger-v2.png)
+  <p align="center">Worked Swagger v2</p>
