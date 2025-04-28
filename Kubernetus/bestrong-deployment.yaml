@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bestrong-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bestrong
+  template:
+    metadata:
+      labels:
+        app: bestrong
+    spec:
+      containers:
+      - name: bestrong
+        image: bestrong-api:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
