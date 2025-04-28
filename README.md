@@ -10,6 +10,10 @@
    * [Description](#description)
    * [how to start](#how-to-start)
    * [Screenshots](#screenshots)
+* [Report 24.04.25](#report-240425)
+   * [The first task is to deploy and test a sample app: <a href="https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one">https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one</a>](https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one)
+   * [Next, I launched the frontend using the commandTask Two](#next-i-launched-the-frontend-using-the-commandtask-two)
+   * [Task 3](#task-3)
 
 # ASP.NET Core WebApi Sample with HATEOAS, Versioning & Swagger
 
@@ -132,3 +136,121 @@ terraform init   # with backend
 
 ![Azure](.github/Report_image/Swagger-v2.png)
   <p align="center">Worked Swagger v2</p>
+
+
+# Report 24.04.25
+## The first task is to deploy and test a sample app: https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one
+Task one, you need to Deploy and test a sample app:the first step I did was to install minicube and kubectl 
+Next, I downloaded the repository and navigated to the desired folder
+
+```bash
+git clone https://github.com/kubernetes/examples.git
+cd examples/guestbook/all-in-one
+```
+Launched minikube
+
+```bash
+minikube start
+```
+
+![Minikube](.github/Report24.04.25_image/Minikube.png)
+  <p align="center">Minikube</p>
+
+Next, I deployed the app with the following command
+
+```bash
+kubectl apply -f guestbook-all-in-one.yaml
+```
+
+![Minikube](.github/Report24.04.25_image/kubectl.png)
+  <p align="center">Kubectl</p>
+
+Checked if everything is deployed
+
+```bash
+kubectl get all
+```
+
+![Minikube](.github/Report24.04.25_image/Kublectl-get-all.png)
+  <p align="center">Kubectl get all</p>
+
+Next, I launched the frontend using the command
+
+```bash
+minikube service frontend
+```
+
+![Minikube](.github/Report24.04.25_image/frontend.png)
+  <p align="center">Frontend</p>
+
+![Minikube](.github/Report24.04.25_image/Site.png)
+  <p align="center">Site</p>
+
+## Next, I launched the frontend using the commandTask Two
+Switched to the repository to the Bestrong repository
+Next, I switch Docker to Minikube's environment
+
+```bash
+eval $(minikube docker-env)
+```
+
+Then build the image
+
+```bash
+docker build -t bestrong-api:latest .
+```
+
+![Minikube](.github/Report24.04.25_image/docker.png)
+  <p align="center">Docker build</p>
+
+Next, I wrote Kubernetes manifests
+
+A Deployment (to run the API)
+A Service (to expose the Deployment)
+
+![Minikube](.github/Report24.04.25_image/Manifest.png)
+  <p align="center">Manifest</p>
+
+Apply manifests
+
+```bash
+kubectl apply -f bestrong-deployment.yaml
+kubectl apply -f bestrong-service.yaml
+```
+
+![Minikube](.github/Report24.04.25_image/Deployed.png)
+  <p align="center">Deployed</p>
+
+Next, I wrote Kubernetes manifests and then went to the browser to check if everything worked:
+
+```bash
+minikube service bestrong-service
+```
+
+![Minikube](.github/Report24.04.25_image/Browser.png)
+  <p align="center">Browser</p>
+
+![Minikube](.github/Report24.04.25_image/Swagger.png)
+  <p align="center">Swagger</p>
+
+## Task 3 
+What is Minikube?
+Minikube is a tool that allows developers to simulate a mini version of a real cloud environment on their own computers.
+It creates a small, private Kubernetes cluster (a system that runs and manages applications) without needing to connect to external services or spend money on cloud hosting.
+
+The BeStong application is currently running on a Minikube environment.
+
+Minikube is a tool that simulates a cloud environment locally on a developer’s computer.
+
+It allows us to test, develop, and improve the application quickly and cost-effectively without paying for cloud services during the early stages.
+
+Business Benefits:
+
+Low Cost: No cloud hosting fees while in development phase.
+
+Fast Changes: Developers can make and test changes immediately.
+
+Flexibility: Easy to adjust or improve the application before it reaches a large number of users.
+
+![Minikube](.github/Report24.04.25_image/diagram.png)
+  <p align="center">diagram</p>
