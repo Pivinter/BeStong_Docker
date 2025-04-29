@@ -96,7 +96,7 @@ See the examples here:
 # Report
 
 ## Description
-For this project, I created a docker file and a compouser docker, then I added the build to GitHub Actions and pushed the image to Docker Hub. Next, I created the infrastructure to launch the application via Azure App service. I also added Azure DevOps for terraform.
+For this project, I created a docker file and a doker compouser, then I added the build to GitHub Actions and pushed the image to Docker Hub. Next, I created the infrastructure to launch the application via Azure App service. I also added Azure DevOps for terraform.
 
 ## how to start
 
@@ -132,10 +132,10 @@ terraform init   # with backend
   <p align="center">Azure resourse group</p>
 
 ![Azure](.github/Report_image/Swagger.png)
-  <p align="center">Swagger</p>
+  <p align="center">Working Swagger</p>
 
 ![Azure](.github/Report_image/Swagger-v2.png)
-  <p align="center">Swagger v2</p>
+  <p align="center">Working Swagger v2</p>
 
 
 # Report 24.04.25
