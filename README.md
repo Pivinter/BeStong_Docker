@@ -252,5 +252,5 @@ Fast Changes: Developers can make and test changes immediately.
 
 Flexibility: Easy to adjust or improve the application before it reaches a large number of users.
 
-![Minikube](.github/Report24.04.25_image/Dia.png)
+![Minikube](.github/Report24.04.25_image/Diagrama.png)
   <p align="center">Diagram</p>
