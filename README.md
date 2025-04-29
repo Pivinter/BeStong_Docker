@@ -11,9 +11,9 @@
    * [how to start](#how-to-start)
    * [Screenshots](#screenshots)
 * [Report 24.04.25](#report-240425)
-   * [The first task is to deploy and test a sample app: <a href="https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one">https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one</a>](https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one)
-   * [Next, I launched the frontend using the commandTask Two](#next-i-launched-the-frontend-using-the-commandtask-two)
-   * [Task 3](#task-3)
+   * [The first task ](#the-first-task)
+   * [Task two](#Task-two)
+   * [Task three](#Task-three)
 
 # ASP.NET Core WebApi Sample with HATEOAS, Versioning & Swagger
 
@@ -96,7 +96,7 @@ See the examples here:
 # Report
 
 ## Description
-For this project, I created a docker file and a compouse docker, then I added the build to GitHub Actions and pushed the image to Docker Hub. Next, I created the infrastructure to launch the application via Azure App service. I also added Azure DevOps for terraform.
+For this project, I created a docker file and a compouser docker, then I added the build to GitHub Actions and pushed the image to Docker Hub. Next, I created the infrastructure to launch the application via Azure App service. I also added Azure DevOps for terraform.
 
 ## how to start
 
@@ -129,19 +129,19 @@ terraform init   # with backend
   <p align="center">Check passed</p>
 
 ![Azure](.github/Report_image/A-res-group.png)
-  <p align="center">Azure resurse group</p>
+  <p align="center">Azure resourse group</p>
 
 ![Azure](.github/Report_image/Swagger.png)
-  <p align="center">Worked Swagger</p>
+  <p align="center">Swagger</p>
 
 ![Azure](.github/Report_image/Swagger-v2.png)
-  <p align="center">Worked Swagger v2</p>
+  <p align="center">Swagger v2</p>
 
 
 # Report 24.04.25
-## The first task is to deploy and test a sample app: https://github.com/kubernetes/examples/tree/master/guestbook/all-in-one
-Task one, you need to Deploy and test a sample app:the first step I did was to install minicube and kubectl 
-Next, I downloaded the repository and navigated to the desired folder
+## The first task 
+The first step і installed minicube and kubectl.
+Next, I downloaded the repository and navigated to the desired folder:
 
 ```bash
 git clone https://github.com/kubernetes/examples.git
@@ -186,7 +186,7 @@ minikube service frontend
 ![Minikube](.github/Report24.04.25_image/Site.png)
   <p align="center">Site</p>
 
-## Next, I launched the frontend using the commandTask Two
+## Task two
 Switched to the repository to the Bestrong repository
 Next, I switch Docker to Minikube's environment
 
@@ -233,7 +233,7 @@ minikube service bestrong-service
 ![Minikube](.github/Report24.04.25_image/Swagger.png)
   <p align="center">Swagger</p>
 
-## Task 3 
+## Task three
 What is Minikube?
 Minikube is a tool that allows developers to simulate a mini version of a real cloud environment on their own computers.
 It creates a small, private Kubernetes cluster (a system that runs and manages applications) without needing to connect to external services or spend money on cloud hosting.
@@ -252,5 +252,5 @@ Fast Changes: Developers can make and test changes immediately.
 
 Flexibility: Easy to adjust or improve the application before it reaches a large number of users.
 
-![Minikube](.github/Report24.04.25_image/diagram.png)
-  <p align="center">diagram</p>
+![Minikube](.github/Report24.04.25_image/Dia.png)
+  <p align="center">Diagram</p>
