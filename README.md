@@ -14,6 +14,10 @@
    * [The first task ](#the-first-task)
    * [Task two](#Task-two)
    * [Task three](#Task-three)
+* [Report 02.05.25](#report-020525)
+   * [System context diagram](#system-context-diagram)
+   * [Container diagram](#Container-diagram)
+   * [Component diagram](#Component-diagram)
 
 # ASP.NET Core WebApi Sample with HATEOAS, Versioning & Swagger
 
