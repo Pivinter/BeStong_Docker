@@ -268,10 +268,10 @@ We had a problem, all the data was stored in a pod, when the pod crashed we lost
   <p align="center">System context diagram</p>
 
 ## Container diagram
-![MongoDB](.github/Report24.04.25_image/Container-diagram.png)
+![MongoDB](.github/Report02.05.25_image/Container-diagram.png)
   <p align="center">Container diagram</p>
 
 ## Component diagram
 
-![MongoDB](.github/Report24.04.25_image/Component-diagram.png)
+![MongoDB](.github/Report02.05.25_image/Component-diagram.png)
   <p align="center">Component diagram</p>
