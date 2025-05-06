@@ -254,3 +254,20 @@ Flexibility: Easy to adjust or improve the application before it reaches a large
 
 ![Minikube](.github/Report24.04.25_image/Diagrama.png)
   <p align="center">Diagram</p>
+
+# Report 02.05.25
+
+We had a problem, all the data was stored in a pod, when the pod crashed we lost all the data, so to be able to store the data you created a PersistentVolume to store the data and a PersistentVolumeClaim so all the pods could use it.
+
+## System context diagram
+![MongoDB](.github/Report02.05.25_image/System-context-diagram.png)
+  <p align="center">System context diagram</p>
+
+## Container diagram
+![MongoDB](.github/Report24.04.25_image/Container-diagram.png)
+  <p align="center">Container diagram</p>
+
+## Component diagram
+
+![MongoDB](.github/Report24.04.25_image/Component-diagram.png)
+  <p align="center">Component diagram</p>

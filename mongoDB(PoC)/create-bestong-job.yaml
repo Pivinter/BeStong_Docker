@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-bestong-collection
+spec:
+  template:
+    spec:
+      containers:
+      - name: mongosh-client
+        image: mongo:7.0.9
+        command: ["mongosh"]
+        args:
+          [
+            "mongodb://$(MONGO_USER):$(MONGO_PASSWORD)@mongodb:27017/admin",
+            "--eval",
+            "db = db.getSiblingDB('BeStrong'); db.createCollection('init');"
+          ]
+        env:
+        - name: MONGO_USER
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-user
+        - name: MONGO_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-password
+      restartPolicy: Never
